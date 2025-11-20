@@ -16,15 +16,16 @@ public class MonitorMapa extends Thread{
                 for(c=0;c<columnas;c++){
                 System.out.printf("|%2c|",mapa[r][c]);
             }
-            System.out.println("");
+            System.out.println("\n");
             }
         
     
-        sleep(1500);
+        sleep(2500);
     }
     catch(InterruptedException e){
         System.out.println("Interrupccion");
     }
+        }
     }
-    }
+    public void terminar(){ terminar=true; interrupt();}
 }
