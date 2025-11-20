@@ -13,12 +13,12 @@ public class Main{
         MonitorMapa monitor = new MonitorMapa(mapa);
         gus.start();
         monitor.start();
-        /*try{
+        try{
             gus.join();
         }
         catch(InterruptedException e){
             System.out.println("interupt");
         }
-        monitor.terminar();*/
+        monitor.terminar();
     }
 }
