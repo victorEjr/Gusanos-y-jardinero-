@@ -3,22 +3,18 @@ public class MonitorMapa extends Thread{
     private boolean terminar;
     private boolean pausa = true;
 
-    
     public MonitorMapa(char[][] mundo){
-        this.mapa=mundo; terminar=false;
+        this.mapa=mundo; terminar = false;
     }
-    
         public synchronized void pausar(){
         pausa = true;
         System.out.println("Mapa Pausado.");
     }
-    
         public synchronized void continuar(){
         pausa = false;
         notify();
         System.out.println("Mapa Reanudado");
     }
-    
     
     public void run(){
         int r, c; int filas=mapa.length;
@@ -43,7 +39,6 @@ public class MonitorMapa extends Thread{
                 System.out.println("Interrupción");
             }
         }
-    }
-    
+    }   
     public void terminar(){ terminar=true; interrupt();}
 }
